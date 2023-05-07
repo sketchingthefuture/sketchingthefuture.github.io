@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Sketching the Future: Applying Conditional Control Techniques to Text-to-Video Models</title>
+
+    <meta name="description" content="Do As I Can, Not As I Say: Grounding Language in Robotic Affordances">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+        <!--FACEBOOK-->
+    <meta property="og:image" content="https://say-can.github.io/img/share_image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="682">
+    <meta property="og:image:height" content="682">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://say-can.github.io/"/>
+    <meta property="og:title" content="SayCan" />
+    <meta property="og:description" content="Project page for Do As I Can, Not As I Say: Grounding Language in Robotic Affordances." />
+
+        <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SayCan" />
+    <meta name="twitter:description" content="Project page for Do As I Can, Not As I Say: Grounding Language in Robotic Affordances." />
+    <meta name="twitter:image" content="https://say-can.github.io/img/share_image.png" />
+
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-52J0PM8XKV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-52J0PM8XKV');
+</script>
+	
+    <style>
+        .nav-pills {
+          position: relative;
+          display: inline;
+        }
+        .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+    </style>
+</head>
+
+
+<div class="row">
+    <!-- First row of GIFs -->
+    <div class="col-md-1 col-md-offset-1">
+        <img src="assets/gifs/balloon_s.gif" class="img-responsive square-gif" alt="GIF 1">
+        <img src="assets/gifs/balloon.gif" class="img-responsive square-gif" alt="GIF 1">
+        <p>A hot air balloon floating past a sunset</p>
+
+    </div>
+    <div class="col-md-1 col-md-offset-1">
+        <img src="assets/gifs/icecream_s.gif" class="img-responsive square-gif" alt="GIF 1">
+        <img src="assets/gifs/icecream.gif" class="img-responsive square-gif" alt="GIF 1">
+        <p>An ice cream cone melting in front of a brick wall</p>
+    </div>
+    <div class="col-md-1 col-md-offset-1">
+        <img src="assets/gifs/plant_s.gif" class="img-responsive square-gif" alt="GIF 1">
+        <img src="assets/gifs/plant.gif" class="img-responsive square-gif" alt="GIF 1">
+        <p>A plant with green leaves growing in a clay pot</p>
+    </div>
+    <div class="col-md-1 col-md-offset-1">
+        <img src="assets/gifs/man_s.gif" class="img-responsive square-gif" alt="GIF 1">
+        <img src="assets/gifs/man.gif" class="img-responsive square-gif" alt="GIF 1">
+        <p>A man walking on the beach in front of the ocean</p>
+    </div>
+    <div class="col-md-1 col-md-offset-1">
+        <img src="assets/gifs/kayak_s.gif" class="img-responsive square-gif" alt="GIF 1">
+        <img src="assets/gifs/kayak.gif" class="img-responsive square-gif" alt="GIF 1">
+        <p>A yellow kayak and oars floating down a river</p>
+    </div>
+    <div class="col-md-1 col-md-offset-1">
+        <img src="assets/gifs/rocket_s.gif" class="img-responsive square-gif" alt="GIF 1">
+        <img src="assets/gifs/rocket.gif" class="img-responsive square-gif" alt="GIF 1">
+        <p>A rocket blasting off in front of a planet</p>
+    </div>
+
+    
+    <!-- Add more GIFs by repeating the above div and updating the src attribute -->
+    <!-- ... -->
+</div>
+
+
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b><font size="+6">Sketching the Future</font></b>: </br> Applying Conditional Control Techniques to Text-to-Video Models </br> 
+                <!--<small>
+                    CoRL 2021
+                </small>-->
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                <br>
+                <li><a href="https://vigneshrajmohan.github.io" target="_blank">Vignesh Rajmohan</a></li> <li>Rohan Dhesikan</li>
+                <br><br>
+                </ul>
+            </div>
+        </div>
+        
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="assets/palm_saycan.pdf">
+                            <image src="img/paper_small.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=5QH3T7mhomw">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="https://github.com/rohandkn/skribble2vid">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                            <li>
+                            <a href="https://colab.research.google.com/drive/1xc2P3x-10oqsMxA-2SuDlwoE41vCS0m6?authuser=0#scrollTo=2tYf2tArjY93">
+                            <image src="img/demo.png" height="60px">
+                                <h4><strong>Demo</strong></h4>
+                            </a>
+                        </li> 
+                        </li> 
+                    </ul>
+                </div>
+        </div>
+
+       
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    The proliferation of video content demands efficient and flexible neural network-based approaches for generating new video content. In this paper, we propose a novel approach that combines zero-shot text-to-video generation with ControlNet to improve the output of these models. Our method takes multiple sketched frames as input and generates video output that matches the flow of these frames, building upon the Text-to-Video Zero architecture and incorporating ControlNet to enable additional input conditions. By first interpolating frames between the inputted sketches and then running Text-to-Video Zero using the new interpolated frames video as the control technique, we leverage the benefits of both zero-shot text-to-video generation and the robust control provided by ControlNet. Experiments show that our method is capable of generating high-quality and remarkably consistent video content with low overhead, despite not being trained on additional video data.                 </p>
+             <p style="text-align:center;">
+
+                </p>
+            </div>
+        </div>
+
+
+	    <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/5QH3T7mhomw" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Try it out!
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <img src="img/colab_screenshot.png" alt="Colab Screenshot" style="position:absolute;top:0;left:0;width:100%;height:100%;" />
+                        <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);">
+                            <a href="https://colab.research.google.com/drive/1xc2P3x-10oqsMxA-2SuDlwoE41vCS0m6?usp=sharing" target="_blank">Click here to access the Colab</a>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
+
+         <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation 
+                </h3> <a href="https://arxiv.org/abs/2204.01691">[arxiv version]</a>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{saycan2022arxiv,
+    title={Sketching the Future: Applying Conditional Control Techniques to Text-to-Video Models},
+    author={Vignesh Rajmohan, Rohan Dhesikan},
+    booktitle={arXiv preprint arXiv:2204.01691},
+    year={2023}
+}</textarea>
+                </div>
+            </div>
+             
+        </div> -->
+
+<!-- 
+         <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    <font color="#5a00b4">Dataset</font>
+                </h3>
+               <font color="#5a00b4">SayCan dataset v0 contains mapping from natural language user instructions to one possible solution. It is available under CC BY 4.0 license. <a href="https://github.com/say-can/say-can.github.io/tree/main/data">[v0]</a></font>
+            </div>
+        </div> -->
+
+
+         <!-- <div class="row">
+            <div id="open-source" class="col-md-8 col-md-offset-2">
+                <h3>
+                    <font color="#5a00b4">Open Source</font>
+                </h3>
+              <font color="#5a00b4">We open source a version of SayCan that works with a simulated tabletop environment. <a href="https://github.com/google-research/google-research/tree/master/saycan">[tabletop saycan] </a> </font>
+              <p style="text-align:center;">
+                    <img src="img/open_source_tabletop.png" class="img-responsive" height="600px">
+                </p>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+The authors would like to thank Professor Pathak and the course staff of Visual Learning and Recognition for their support and Mrinal Verghese for his compute resources.
+                    <br><br>
+                The website template was borrowed from <a href="http://jonbarron.info/">Jon Barron</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
